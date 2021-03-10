@@ -12,5 +12,5 @@ add_library(unity STATIC
 	extras/memory/src/unity_memory.c
 ) 
 
-target_compile_options(unity PRIVATE "-Wall")
+target_compile_options(unity PRIVATE -Wall)
 target_include_directories(unity PUBLIC ${INCLUDE_DIRS})

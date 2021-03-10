@@ -5,8 +5,6 @@ project(tdd_cyclic_buffer C)
 add_subdirectory(../Unity unity)
 add_subdirectory(../fff fff)
 
-set(CMAKE_C_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -Wextra")
-
 set(INCLUDE_DIRS
 	../../src
 )
@@ -29,12 +27,12 @@ set(GLOBAL_DEFINES
 
 )
 
-add_executable(tdd_cyclic_buffer ${SRCS} ${TEST_SRCS})
+add_executable(${CMAKE_PROJECT_NAME} ${SRCS} ${TEST_SRCS})
 
-target_include_directories(tdd_cyclic_buffer PRIVATE ${INCLUDE_DIRS} ${TEST_INCLUDE_DIRS})
-target_compile_definitions(tdd_cyclic_buffer PRIVATE ${GLOBAL_DEFINES})
-
-target_link_libraries(tdd_cyclic_buffer unity)
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${INCLUDE_DIRS} ${TEST_INCLUDE_DIRS})
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE ${GLOBAL_DEFINES})
+target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE -Wall -Wextra)
+target_link_libraries(${CMAKE_PROJECT_NAME} unity)
 
 enable_testing()
-add_test(tests tdd_cyclic_buffer)
+add_test(tests ${CMAKE_PROJECT_NAME})
