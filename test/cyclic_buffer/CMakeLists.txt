@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.10)
 project(tdd_cyclic_buffer C)
 
 add_subdirectory(../Unity unity)
-add_subdirectory(../fff fff)
 
 set(INCLUDE_DIRS
 	../../src

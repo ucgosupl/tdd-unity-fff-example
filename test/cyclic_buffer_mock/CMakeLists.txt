@@ -32,7 +32,7 @@ add_executable(${CMAKE_PROJECT_NAME} ${SRCS} ${TEST_SRCS})
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${INCLUDE_DIRS} ${TEST_INCLUDE_DIRS})
 target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE ${GLOBAL_DEFINES})
 target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE -Wall -Wextra)
-target_link_libraries(${CMAKE_PROJECT_NAME} unity)
+target_link_libraries(${CMAKE_PROJECT_NAME} unity fff)
 
 enable_testing()
 add_test(tests ${CMAKE_PROJECT_NAME})
