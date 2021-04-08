@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.14)
 
 project(tdd_cyclic_buffer C)
 
+option(STATIC_ANALYSIS "Build for static analysis" OFF)
+
+if (STATIC_ANALYSIS)
+include(../../cmake/static-analysis.cmake)
+endif()
+
 add_subdirectory(../Unity unity)
 
 set(INCLUDE_DIRS
